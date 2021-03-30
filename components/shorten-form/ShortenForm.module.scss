@@ -1,0 +1,31 @@
+.container {
+  background-image: url("/svg/bg-shorten-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #3a3053;
+  min-height: 162px;
+  width: 50%;
+  margin: 0 auto;
+  position: absolute;
+  top: 86%;
+  left: 23%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  form {
+    width: 100%;
+    margin: 0 auto;
+    input {
+      border-radius: 3px;
+      width: 75%;
+    }
+  }
+
+  ul {
+    li {
+      color: white;
+    }
+  }
+}

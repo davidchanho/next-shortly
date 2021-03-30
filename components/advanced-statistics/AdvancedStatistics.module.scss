@@ -1,0 +1,24 @@
+.container {
+  min-height: 908px;
+  margin: 0 auto;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #f0f1f6;
+
+  header {
+    width: 29%;
+    margin-bottom: 5%;
+  }
+
+  ul {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: start;
+  }
+}
