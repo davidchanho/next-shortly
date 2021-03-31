@@ -1,8 +1,9 @@
 .navbar,
-.navbar > ul {
+.navbar > ul, .nav, .userNav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: row;
 }
 
 .navbar > ul > li {

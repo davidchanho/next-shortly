@@ -7,7 +7,7 @@ function Head() {
       <title>Shortly</title>
       <meta name="description" content="shorten urls with analysis." />
       <link rel="icon" href="/favicon.png" />
-      <script async>
+      <script>
         {process.env.NODE_ENV == "production"
           ? "window.__REACT_DEVTOOLS_GLOBAL_HOOK__.inject = function(){}"
           : ""}

@@ -6,6 +6,9 @@
 }
 
 .container {
+  position: absolute;
+  top: 830px;
+  left: 12%;
   min-height: 166px;
   width: 1106px;
   margin: 0 auto;
@@ -14,10 +17,10 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #3a3053;
+  border-radius: 10px;
 
   form {
     height: 62px;
-
     input,
     button {
       height: 100%;
@@ -37,30 +40,24 @@
 
     button {
       width: 182px;
-    }
-  }
-}
-
-.list {
-  ul {
-    li {
-      color: black;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      background-color: #2cd0cf;
+      color: white;
     }
   }
 }
 
 @media (max-width: 375px) {
   .container {
-    width: 100%;
-    min-height: 325px;
+    width: 325px;
+    min-height: 159px;
     padding: 0 24px;
     background-image: url("/svg/bg-shorten-mobile.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #3a3053;
+    position: absolute;
+    top: 840px;
+    left: 6%;
 
     form {
       width: 100%;

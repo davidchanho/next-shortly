@@ -3,16 +3,22 @@ import axios from "axios";
 import { AppThunk, RootState } from "./store";
 
 export interface IUrl {
-  id?: string;
+  _id?: string;
   new: string;
   old: string;
 }
 
 interface UrlState {
   urls: IUrl[];
+  loading: boolean;
+  error: string;
 }
 
-const initialState = { urls: [] } as UrlState;
+const initialState: UrlState = {
+  urls: [],
+  loading: false,
+  error: "",
+};
 
 const urlSlice = createSlice({
   name: "url",
@@ -20,20 +26,50 @@ const urlSlice = createSlice({
   reducers: {
     set(state, action: PayloadAction<IUrl>) {
       state.urls.push(action.payload);
+      state.loading = false;
+    },
+    load(state, action: PayloadAction<IUrl[]>) {
+      state.urls = action.payload;
+      state.loading = false;
+    },
+    loading(state) {
+      state.loading = true;
+      state.error = "";
+    },
+    error(state, action: PayloadAction<string>) {
+      state.error = action.payload;
+      state.loading = false;
     },
   },
 });
 
-export const { set } = urlSlice.actions;
+export const { set, load, loading, error } = urlSlice.actions;
 
 export default urlSlice.reducer;
 
 export const urlsSelector = (state: RootState) => state.urls;
 
 export const shortenUrl = (url: string): AppThunk => async (dispatch) => {
-  const id = nanoid();
-  const newUrl = `https://srtly.com/${id}`;
-  const saveUrl = { new: newUrl, old: url };
-  axios.post("/api/urls", saveUrl);
-  dispatch(set(saveUrl));
+  dispatch(loading());
+  try {
+    const id = nanoid(6);
+    const newUrl = `https://rel.ink/${id}`;
+    const saveUrl = { id, new: newUrl, old: url };
+    axios.post("/api/urls", saveUrl);
+    dispatch(set(saveUrl));
+  } catch (err) {
+    dispatch(error(err.message));
+  }
+};
+
+export const loadUrl = (): AppThunk => async (dispatch) => {
+  dispatch(loading());
+  try {
+    const {
+      data: { urls },
+    } = await axios.get("/api/urls");
+    dispatch(load(urls));
+  } catch (err) {
+    dispatch(error(err.message));
+  }
 };
