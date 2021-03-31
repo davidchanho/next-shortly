@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 interface IUser {
   id?: string;
@@ -21,13 +21,13 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     login: (state) => {
-      state.user.id = '123'
-      state.loading = false
+      state.user.id = "123";
+      state.loading = false;
     },
     logout: (state) => {
-      state.user.id = ''
-      state.loading = false
-    }
+      state.user.id = "";
+      state.loading = false;
+    },
   },
 });
 

@@ -1,8 +1,15 @@
+import Link from "next/link";
 import React from "react";
+
+interface ILink {
+  id: string;
+  href: string;
+  title: string;
+}
 
 interface Props {
   title: string;
-  links: string[];
+  links: ILink[];
 }
 
 function FooterNav({ title, links }: Props) {
@@ -10,8 +17,10 @@ function FooterNav({ title, links }: Props) {
     <nav>
       <p>{title}</p>
       <ul>
-        {links?.map((link, index) => (
-          <li key={`footer-link-${index}`}>{link}</li>
+        {links?.map(({ id, href, title }) => (
+          <Link href={href} key={`footer-link-${id}`}>
+            {title}
+          </Link>
         ))}
       </ul>
     </nav>

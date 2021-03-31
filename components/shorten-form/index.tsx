@@ -2,11 +2,14 @@ import React, { ChangeEvent, FormEvent, useState } from "react";
 import { useDispatch } from "react-redux";
 import { shortenUrl } from "../../app/urlSlice";
 import isURL from "../../helpers/isURL";
+import Button from "../_ui/button";
 import styles from "./ShortenForm.module.scss";
 
 function ShortenForm() {
   const dispatch = useDispatch();
+ 
   const [url, setUrl] = useState("");
+  
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     setUrl(e.target.value);
   };
@@ -27,8 +30,11 @@ function ShortenForm() {
           onChange={onChange}
           placeholder="Shorten a link here..."
         />
-        <button type="submit">Shorten it!</button>
+        <Button type="submit">
+          Shorten it!
+        </Button>
       </form>
+      <small>Please add a link</small>
     </section>
   );
 }

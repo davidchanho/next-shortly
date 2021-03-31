@@ -1,5 +1,6 @@
 @use "../../styles/colors";
 @use "../../styles/utils";
+@use "../../styles/size";
 
 .list {
   width: 1106px;
@@ -20,6 +21,7 @@
   border-radius: 10px;
   section {
     display: flex;
+    @include utils.centerBetween;
     p {
       color: colors.$primary;
     }
@@ -28,9 +30,10 @@
     }
   }
 }
+
 @media (max-width: 375px) {
   .list {
-    width: 325px;
+    width: 86%;
     min-height: 159px;
   }
   .linkList {
@@ -48,8 +51,6 @@
       button {
         width: 100%;
         margin-left: 0;
-        color: colors.$white;
-        background-color: colors.$primary;
       }
     }
   }

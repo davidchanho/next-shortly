@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { login, logout } from "../../../app/userSlice";
@@ -17,9 +18,11 @@ function Navbar() {
 
   return (
     <header className={styles.navbar}>
-      <a href="/" className={styles.brand}>
-        <Logo />
-      </a>
+      <Link href="/">
+        <a className={styles.brand}>
+          <Logo />
+        </a>
+      </Link>
 
       <button className={styles.toggle}>
         <hr />
@@ -29,16 +32,26 @@ function Navbar() {
 
       <section className={styles.collapse}>
         <ul className={styles.nav}>
-          <li>Features</li>
-          <li>Pricing</li>
-          <li>Resources</li>
+          <li>
+            <Link href="features">Features</Link>
+          </li>
+          <li>
+            <Link href="pricing">Pricing</Link>
+          </li>
+          <li>
+            <Link href="resources">Resources</Link>
+          </li>
         </ul>
 
         <div className={styles.space} />
 
         <ul className={styles.userNav}>
-          <li onClick={onLogin}>Login</li>
-          <li onClick={onSignout}>Signin</li>
+          <li onClick={onLogin}>
+            <Link href="login">Login</Link>
+          </li>
+          <li onClick={onSignout}>
+            <Link href="signout">Signout</Link>
+          </li>
         </ul>
       </section>
     </header>

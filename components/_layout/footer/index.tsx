@@ -18,8 +18,8 @@ function Footer() {
       </div>
       <div>
         <ul className={styles.icons}>
-          {icons.map(({ id, src, alt }) => (
-            <FooterIcon key={`footer-icon-${id}`} src={src} alt={alt} />
+          {icons.map((icon) => (
+            <FooterIcon key={`footer-icon-${icon.id}`} {...icon} />
           ))}
         </ul>
       </div>

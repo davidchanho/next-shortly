@@ -29,7 +29,7 @@
       border: none;
       outline: none;
       &:focus {
-        border: 3px solid colors.$active;
+        box-shadow: 0 0 0 2pt colors.$active;
       }
     }
 
@@ -39,11 +39,15 @@
       color: white;
     }
   }
+
+  small {
+    color: colors.$red;
+  }
 }
 
 @media (max-width: 375px) {
   .container {
-    width: 325px;
+    width: 86%;
     min-height: 159px;
     padding: 0 24px;
     @include bg.bgImgCover("/svg/bg-shorten-mobile.svg");

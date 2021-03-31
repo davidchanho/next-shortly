@@ -1,0 +1,6 @@
+@mixin mobileContainer {
+  width: calc(325 / 375);
+}
+@mixin desktopContainer {
+  width: calc(1106 / 1444);
+}
