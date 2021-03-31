@@ -2,10 +2,10 @@
 @use "../../styles/utils";
 
 .container {
+  @include utils.centerCols;
   min-height: 908px;
   margin: 0 auto;
   padding: 60px;
-  @include utils.centerCols;
   text-align: center;
   background-color: colors.$neutral;
 

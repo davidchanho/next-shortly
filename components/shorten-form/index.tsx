@@ -1,19 +1,21 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { useDispatch } from "react-redux";
 import { shortenUrl } from "../../app/urlSlice";
+import isURL from "../../helpers/isURL";
 import styles from "./ShortenForm.module.scss";
 
 function ShortenForm() {
   const dispatch = useDispatch();
   const [url, setUrl] = useState("");
-
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     setUrl(e.target.value);
   };
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch(shortenUrl(url));
+    if (isURL(url)) {
+      dispatch(shortenUrl(url));
+    }
   };
 
   return (

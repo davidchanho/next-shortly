@@ -1,9 +1,18 @@
 import Image from "next/image";
 import React from "react";
 
-function Logo() {
+interface Props {
+  isFooter?: boolean;
+}
+
+function Logo({ isFooter = false }: Props) {
   return (
-    <Image src="/svg/logo.svg" alt="shortly logo" width={120} height={60} />
+    <Image
+      src={isFooter ? "/svg/footerlogo.svg" : "/svg/logo.svg"}
+      alt="shortly logo"
+      width={121}
+      height={33}
+    />
   );
 }
 

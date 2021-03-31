@@ -3,11 +3,11 @@
 @use "../../styles/bg";
 
 .container {
+  @include utils.centerCols;
+  @include bg.bgImgCover("/svg/bg-boost-desktop.svg");
   width: 100%;
   min-height: 254px;
   font-size: 30px;
-  @include utils.centerCols;
-  @include bg.bgImgCover("/svg/bg-boost-desktop.svg");
   color: white;
   text-align: center;
 }

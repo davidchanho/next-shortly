@@ -1,76 +1,26 @@
-import Image from "next/image";
 import React from "react";
 import Logo from "../../_ui/logo";
+import { icons, links } from "./Footer.data";
 import styles from "./Footer.module.scss";
-
-const navItems = [
-  {
-    id: "n-1",
-    title: "Features",
-    links: ["Link Shortening", "Branded Links", "Analytics"],
-  },
-  {
-    id: "n-2",
-    title: "Resources",
-    links: ["Blog", "Developers", "Support"],
-  },
-  {
-    id: "n-3",
-    title: "Company",
-    links: ["About", "Our Team", "Careers", "Contact"],
-  },
-];
+import FooterIcon from "./FooterIcon";
+import FooterNav from "./FooterNav";
 
 function Footer() {
   return (
     <footer className={styles.container}>
-      <Logo />
+      <div>
+        <Logo isFooter={true} />
+      </div>
       <div className={styles.nav}>
-        {navItems.map(({ id, title, links }) => (
-          <nav key={id}>
-            <p>{title}</p>
-            <ul>
-              {links.map((link, index) => (
-                <li key={`footer-link-${index}`}>{link}</li>
-              ))}
-            </ul>
-          </nav>
+        {links.map((link) => (
+          <FooterNav key={link.id} {...link} />
         ))}
       </div>
       <div>
         <ul className={styles.icons}>
-          <li>
-            <Image
-              src="/svg/icon-facebook.svg"
-              alt="go to facebook"
-              width={30}
-              height={30}
-            />
-          </li>
-          <li>
-            <Image
-              src="/svg/icon-twitter.svg"
-              alt="go to twitter"
-              width={30}
-              height={30}
-            />
-          </li>
-          <li>
-            <Image
-              src="/svg/icon-pinterest.svg"
-              alt="go to pinterest"
-              width={30}
-              height={30}
-            />
-          </li>
-          <li>
-            <Image
-              src="/svg/icon-instagram.svg"
-              alt="go to instagram"
-              width={30}
-              height={30}
-            />
-          </li>
+          {icons.map(({ id, src, alt }) => (
+            <FooterIcon key={`footer-icon-${id}`} src={src} alt={alt} />
+          ))}
         </ul>
       </div>
     </footer>
