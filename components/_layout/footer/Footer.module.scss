@@ -1,3 +1,5 @@
+@use "../../../styles/colors";
+
 .container,
 .nav,
 .icons {
@@ -7,7 +9,7 @@
 
 .container {
   min-height: 307px;
-  background-color: #000;
+  background-color: colors.$black;
   color: white;
   padding: 90px;
 }

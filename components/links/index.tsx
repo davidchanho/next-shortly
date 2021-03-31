@@ -9,16 +9,16 @@ function Links() {
 
   const renderLinks = () => {
     if (loading) {
-      return <Skeleton style={{ fontSize: 20, lineHeight: 2, marginBottom: 5 }} count={5} />;
+      return <Skeleton style={{ fontSize: 360 }} count={1} />;
     }
 
     return (
       <ul>
         {urls.map((url) => (
           <li key={`shorten-${url._id}`}>
-            <div>{url.old}</div>
+            <p>{url.old}</p>
             <section>
-              <div>{url.new}</div>
+              <p>{url.new}</p>
               <button>copy</button>
             </section>
           </li>

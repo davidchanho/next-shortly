@@ -1,8 +1,9 @@
+@use '../../styles/bg';
+
 .container {
   width: 100%;
   height: 804px;
-  background-image: url("/svg/illustration-working.svg");
-  background-repeat: no-repeat;
+  @include bg.bgImg("/svg/illustration-working.svg");
   background-position: 115% 0%;
   padding: 120px auto;
 

@@ -1,25 +1,20 @@
+@use "../../styles/colors";
+@use "../../styles/utils";
+@use "../../styles/bg";
+
 .container {
   width: 100%;
   min-height: 254px;
   font-size: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-image: url("/svg/bg-boost-desktop.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #3a3053;
+  @include utils.centerCols;
+  @include bg.bgImgCover("/svg/bg-boost-desktop.svg");
   color: white;
   text-align: center;
 }
 
 @media (max-width: 375px) {
   .container {
-    background-image: url("/svg/bg-boost-mobile.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #3a3053;
+    @include bg.bgImgCover("/svg/bg-boost-mobile.svg");
     min-height: 297px;
   }
 }

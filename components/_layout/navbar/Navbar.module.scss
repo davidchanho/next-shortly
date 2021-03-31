@@ -1,8 +1,10 @@
+@use '../../../styles/utils';
+
 .navbar,
-.navbar > ul, .nav, .userNav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.navbar > ul,
+.nav,
+.userNav {
+  @include utils.centerBetween;
   flex-direction: row;
 }
 

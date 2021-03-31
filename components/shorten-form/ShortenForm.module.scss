@@ -1,9 +1,6 @@
-.container,
-.container > form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+@use "../../styles/colors";
+@use "../../styles/utils";
+@use "../../styles/bg";
 
 .container {
   position: absolute;
@@ -12,15 +9,13 @@
   min-height: 166px;
   width: 1106px;
   margin: 0 auto;
-  flex-direction: column;
-  background-image: url("/svg/bg-shorten-desktop.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #3a3053;
+  @include utils.centerCols;
+  @include bg.bgImgCover("/svg/bg-shorten-desktop.svg");
   border-radius: 10px;
 
   form {
     height: 62px;
+    @include utils.center;
     input,
     button {
       height: 100%;
@@ -34,13 +29,13 @@
       border: none;
       outline: none;
       &:focus {
-        border: 3px solid red;
+        border: 3px solid colors.$active;
       }
     }
 
     button {
       width: 182px;
-      background-color: #2cd0cf;
+      background-color: colors.$primary;
       color: white;
     }
   }
@@ -51,10 +46,7 @@
     width: 325px;
     min-height: 159px;
     padding: 0 24px;
-    background-image: url("/svg/bg-shorten-mobile.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #3a3053;
+    @include bg.bgImgCover("/svg/bg-shorten-mobile.svg");
     position: absolute;
     top: 840px;
     left: 6%;
@@ -77,7 +69,7 @@
         border: none;
         outline: none;
         &:focus {
-          border: 3px solid red;
+          border: 3px solid colors.$active;
         }
       }
 

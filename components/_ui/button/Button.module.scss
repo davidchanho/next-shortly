@@ -1,6 +1,8 @@
+@use "../../../styles/colors";
+
 .container {
-  background-color: #2cd0cf;
-  color: white;
+  background-color: colors.$primary;
+  color: colors.$white;
   border: 0;
   padding: 0.5rem;
 }

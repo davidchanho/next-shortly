@@ -1,0 +1,12 @@
+@use './colors';
+
+@mixin bgImg($img) {
+  background-image: $img;
+  background-repeat: no-repeat;
+}
+@mixin bgImgCover($img) {
+  background-image: $img;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: colors.$accent;
+}

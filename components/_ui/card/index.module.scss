@@ -1,11 +1,25 @@
+@use "../../../styles/colors";
+@use "../../../styles/utils";
+
 .container {
   width: 325px;
   height: 265px;
-  background-color: white;
+  background-color: colors.$white;
   margin-right: 15px;
   padding: 1rem;
   border-radius: 3px;
   text-align: center;
+  position: relative;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90px;
+    height: 90px;
+    background-color: colors.$accent;
+    padding: 25px;
+    border-radius: 50%;
+  }
 }
 
 @media (max-width: 375px) {
@@ -13,10 +27,7 @@
     margin-right: 0;
     margin-bottom: 90px;
     border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    @include utils.centerCols;
     position: relative;
     img {
       position: absolute;
@@ -24,7 +35,7 @@
       left: 35%;
       width: 90px;
       height: 90px;
-      background-color: #3a3053;
+      background-color: colors.$accent;
       padding: 25px;
       border-radius: 50%;
     }

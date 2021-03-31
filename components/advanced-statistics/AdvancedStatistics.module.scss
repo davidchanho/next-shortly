@@ -1,17 +1,13 @@
-.container,
-.container > ul {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+@use "../../styles/colors";
+@use "../../styles/utils";
 
 .container {
   min-height: 908px;
   margin: 0 auto;
   padding: 60px;
-  flex-direction: column;
+  @include utils.centerCols;
   text-align: center;
-  background-color: #f0f1f6;
+  background-color: colors.$neutral;
 
   header {
     width: 29%;
@@ -19,6 +15,7 @@
   }
 
   ul {
+    @include utils.center;
     width: 100%;
     text-align: start;
   }
@@ -29,10 +26,7 @@
     padding: 0;
 
     header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
+      @include utils.centerCols;
       min-height: 317px;
       width: 100%;
       margin-bottom: 5%;
@@ -42,6 +36,5 @@
   .list {
     flex-direction: column;
     width: 100%;
-    
   }
 }

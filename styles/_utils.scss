@@ -1,0 +1,16 @@
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin centerCols {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+@mixin centerBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
