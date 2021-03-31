@@ -1,5 +1,6 @@
 import { createSlice, nanoid, PayloadAction } from "@reduxjs/toolkit";
 import { AppThunk, RootState } from "./store";
+import axios from 'axios'
 
 interface IUrl {
   id: string;
@@ -25,11 +26,17 @@ const urlSlice = createSlice({
 });
 
 export const { set, get } = urlSlice.actions;
+
 export default urlSlice.reducer;
+
 export const urlsSelector = (state: RootState) => state.urls;
+
 export const shortenUrl = (url: string): AppThunk => async (dispatch) => {
-  const id = nanoid();
-  const newUrl = `https://srtly.com/${id}`;
-  const saveUrl = { id, new: newUrl, old: url };
-  dispatch(set(saveUrl));
+
+    const id = nanoid();
+    const newUrl = `https://srtly.com/${id}`;
+    const saveUrl = { new: newUrl, old: url };
+    axios.post('/api/urls', saveUrl)
+    dispatch(set(saveUrl));
+ 
 };
