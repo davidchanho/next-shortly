@@ -5,6 +5,7 @@ function Head() {
   return (
     <NHead>
       <title>Shortly</title>
+      <meta name='description' content='shorten urls with analysis.' />
       <link rel="icon" href="/favicon.png" />
     </NHead>
   );

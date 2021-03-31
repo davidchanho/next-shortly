@@ -1,7 +1,10 @@
+import Image from "next/image";
 import React from "react";
 
 function Logo() {
-  return <img src="/svg/logo.svg" alt="shortly logo" />;
+  return (
+    <Image src="/svg/logo.svg" alt="shortly logo" width={30} height={30} />
+  );
 }
 
 export default Logo;
