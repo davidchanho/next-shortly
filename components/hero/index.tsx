@@ -6,7 +6,7 @@ function Hero() {
   return (
     <section className={styles.container}>
       <header>
-        <h2>More than just shorter links</h2>
+        <h1>More than just shorter links</h1>
         <p >
           Build your brand's recognition and get detailed insights on how your
           links are performing.

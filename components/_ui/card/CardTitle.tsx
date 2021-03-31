@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from "react";
 
 function CardTitle({ children }: PropsWithChildren<{}>) {
-  return <h3>{children}</h3>;
+  return <h2>{children}</h2>;
 }
 
 export default CardTitle;

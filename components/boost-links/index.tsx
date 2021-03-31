@@ -5,7 +5,7 @@ import styles from "./BoostLinks.module.scss";
 function BoostLinks() {
   return (
     <section className={styles.container}>
-      <h1>Boost your links today</h1>
+      <h2>Boost your links today</h2>
       <GetStartedButton />
     </section>
   );
