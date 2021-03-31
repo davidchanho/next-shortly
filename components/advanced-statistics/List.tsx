@@ -1,5 +1,6 @@
-import React from 'react'
-import Item from './Item';
+import React from "react";
+import styles from "./AdvancedStatistics.module.scss";
+import Item from "./Item";
 
 const items = [
   {
@@ -26,13 +27,13 @@ const items = [
 ];
 
 function List() {
-    return (
-      <ul>
-        {items.map((item) => (
-          <Item key={item.id} {...item} />
-        ))}
-      </ul>
-    );
+  return (
+    <ul className={styles.list}>
+      {items.map((item) => (
+        <Item key={item.id} {...item} />
+      ))}
+    </ul>
+  );
 }
 
-export default List
+export default List;

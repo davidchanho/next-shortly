@@ -36,7 +36,7 @@ function Footer() {
           </nav>
         ))}
       </div>
-      <div className={styles.icons}>
+      <div>
         <ul className={styles.icons}>
           <li>
             <img src="/svg/icon-facebook.svg" />

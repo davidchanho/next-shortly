@@ -1,9 +1,9 @@
 import { createSlice, nanoid, PayloadAction } from "@reduxjs/toolkit";
+import axios from "axios";
 import { AppThunk, RootState } from "./store";
-import axios from 'axios'
 
-interface IUrl {
-  id: string;
+export interface IUrl {
+  id?: string;
   new: string;
   old: string;
 }
@@ -21,22 +21,19 @@ const urlSlice = createSlice({
     set(state, action: PayloadAction<IUrl>) {
       state.urls.push(action.payload);
     },
-    get(state, action: PayloadAction<IUrl>) {},
   },
 });
 
-export const { set, get } = urlSlice.actions;
+export const { set } = urlSlice.actions;
 
 export default urlSlice.reducer;
 
 export const urlsSelector = (state: RootState) => state.urls;
 
 export const shortenUrl = (url: string): AppThunk => async (dispatch) => {
-
-    const id = nanoid();
-    const newUrl = `https://srtly.com/${id}`;
-    const saveUrl = { new: newUrl, old: url };
-    axios.post('/api/urls', saveUrl)
-    dispatch(set(saveUrl));
- 
+  const id = nanoid();
+  const newUrl = `https://srtly.com/${id}`;
+  const saveUrl = { new: newUrl, old: url };
+  axios.post("/api/urls", saveUrl);
+  dispatch(set(saveUrl));
 };

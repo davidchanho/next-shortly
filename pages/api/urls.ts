@@ -2,8 +2,7 @@
 
 const MongoClient = require("mongodb").MongoClient;
 
-const uri =
-  "mongodb+srv://shortly:R9IGOpyWH8Qh8LbD@cluster0.59ndz.mongodb.net/shortly?retryWrites=true&w=majority";
+const uri = `mongodb+srv://${process.env.REACT_APP_MONGO_USER}:${process.env.REACT_APP_MONGO_PASS}@cluster0.59ndz.mongodb.net/${process.env.REACT_APP_MONGO_DB}?retryWrites=true&w=majority`;
 
 async function handler(req, res) {
   const client = await MongoClient.connect(uri, {

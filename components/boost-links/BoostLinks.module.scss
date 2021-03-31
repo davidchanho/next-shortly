@@ -1,5 +1,7 @@
 .container {
+  width: 100%;
   min-height: 254px;
+  font-size: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,4 +11,15 @@
   background-size: cover;
   background-color: #3a3053;
   color: white;
+  text-align: center;
+}
+
+@media (max-width: 375px) {
+  .container {
+    background-image: url("/svg/bg-boost-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #3a3053;
+    min-height: 297px;
+  }
 }

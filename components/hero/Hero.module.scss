@@ -18,4 +18,13 @@
 }
 
 @media (max-width: 375px) {
+  .container {
+    background-position: 50% 100%;
+    header {
+      width: 311px;
+      height: 290px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
 }

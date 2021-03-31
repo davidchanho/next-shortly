@@ -1,26 +1,35 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface UserState {
-  value: number;
+interface IUser {
+  id?: string;
 }
 
-const initialState = { value: 0 } as UserState;
+interface UserState {
+  user: IUser;
+  loading: boolean;
+  error: string;
+}
+
+const initialState = {
+  user: { id: "" },
+  loading: false,
+  error: "",
+} as UserState;
 
 const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    increment(state) {
-      state.value++;
+    login: (state) => {
+      state.user.id = '123'
+      state.loading = false
     },
-    decrement(state) {
-      state.value--;
-    },
-    incrementByAmount(state, action: PayloadAction<number>) {
-      state.value += action.payload;
-    },
+    logout: (state) => {
+      state.user.id = ''
+      state.loading = false
+    }
   },
 });
 
-export const { increment, decrement, incrementByAmount } = userSlice.actions;
+export const { login, logout } = userSlice.actions;
 export default userSlice.reducer;

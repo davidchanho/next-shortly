@@ -1,8 +1,20 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { login, logout } from "../../../app/userSlice";
 import Logo from "../../_ui/logo";
 import styles from "./Navbar.module.scss";
 
 function Navbar() {
+  const dispatch = useDispatch();
+
+  const onLogin = () => {
+    dispatch(login());
+  };
+
+  const onSignout = () => {
+    dispatch(logout());
+  };
+
   return (
     <header className={styles.navbar}>
       <a href="/" className={styles.brand}>
@@ -15,18 +27,20 @@ function Navbar() {
         <hr />
       </button>
 
-      <ul className={styles.nav}>
-        <li>Features</li>
-        <li>Pricing</li>
-        <li>Resources</li>
-      </ul>
+      <section className={styles.collapse}>
+        <ul className={styles.nav}>
+          <li>Features</li>
+          <li>Pricing</li>
+          <li>Resources</li>
+        </ul>
 
-      <div className={styles.space} />
+        <div className={styles.space} />
 
-      <ul className={styles.userNav}>
-        <li>Login</li>
-        <li>Signin</li>
-      </ul>
+        <ul className={styles.userNav}>
+          <li onClick={onLogin}>Login</li>
+          <li onClick={onSignout}>Signin</li>
+        </ul>
+      </section>
     </header>
   );
 }

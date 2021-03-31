@@ -1,7 +1,32 @@
 .container {
-  width: 320px;
+  width: 325px;
+  height: 265px;
   background-color: white;
   margin-right: 15px;
   padding: 1rem;
   border-radius: 3px;
+  text-align: center;
+}
+
+@media (max-width: 375px) {
+  .container {
+    margin-right: 0;
+    margin-bottom: 90px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    img {
+      position: absolute;
+      top: -18%;
+      left: 35%;
+      width: 90px;
+      height: 90px;
+      background-color: #3a3053;
+      padding: 25px;
+      border-radius: 50%;
+    }
+  }
 }
