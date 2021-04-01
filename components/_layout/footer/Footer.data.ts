@@ -24,7 +24,7 @@ export const links = [
       { id: "c-1", href: "about", title: "About" },
       { id: "c-2", href: "our-team", title: "Our Team" },
       { id: "c-3", href: "careers", title: "Careers" },
-      { id: "c-3", href: "contact", title: "Contact" },
+      { id: "c-4", href: "contact", title: "Contact" },
     ],
   },
 ];

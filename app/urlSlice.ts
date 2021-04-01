@@ -53,6 +53,9 @@ export const shortenUrl = (url: string): AppThunk => async (dispatch) => {
   dispatch(loading());
   try {
     const id = nanoid(6);
+    axios
+      .get(`https://api.shrtco.de/v2/shorten?url=${url}`)
+      .then((res) => console.log(res.data.result["short_link"]));
     const newUrl = `https://rel.ink/${id}`;
     const saveUrl = { id, new: newUrl, old: url };
     axios.post("/api/urls", saveUrl);

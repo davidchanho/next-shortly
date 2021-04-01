@@ -15,7 +15,7 @@ function LinkList() {
   return (
     <ul className={styles.linkList}>
       {urls.map((url) => (
-        <ListItem key={url._id} {...url} />
+        <ListItem key={`link-list-${url._id}`} {...url} />
       ))}
     </ul>
   );

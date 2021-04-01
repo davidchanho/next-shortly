@@ -18,6 +18,27 @@
     @include utils.center;
     width: 100%;
     text-align: start;
+    display: relative;
+
+    li {
+      @include utils.centerCols;
+      display: absolute;
+      text-align: start;
+      margin-right: 31px;
+      border-radius: 10px;
+
+      img {
+        top: -45px;
+        left: 32px;
+      }
+
+      &:first-child {
+        margin-top: -37px;
+      }
+      &:last-child {
+        margin-top: 37px;
+      }
+    }
   }
 }
 
